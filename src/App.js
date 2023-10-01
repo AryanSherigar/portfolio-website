@@ -1,12 +1,12 @@
-import './App.css';
-import Portfolio from './pages/portfolio.js';
-import SocialSidebar from './pages/sidebar';
+import "./App.css";
+import Portfolio from "./pages/portfolio.js";
+import SocialSidebar from "./pages/sidebar";
 
 function App() {
   return (
     <>
-        <Portfolio />
-        <SocialSidebar />
+      <Portfolio />
+      <SocialSidebar />
     </>
   );
 }

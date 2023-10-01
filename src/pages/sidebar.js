@@ -5,9 +5,8 @@ function SocialSidebar() {
   return (
     <div className="social-sidebar">
       <ul className="social-links">
-        <li><a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer"><img src='/images/Github.png' alt="LinkedIn" /></a></li>
-        <li><a href="https://www.github.com/" target="_blank" rel="noopener noreferrer"><img src='Github.png' alt="GitHub" /></a></li>
-        {/* Add more social links here */}
+        <li><a href="https://github.com/AryanSherigar" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github fa-lg"></i></a></li>
+        <li><a href="www.linkedin.com/in/aryan-sherigar-866144255" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin fa-lg"></i></a></li>
       </ul>
     </div>
   );

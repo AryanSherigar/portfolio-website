@@ -1,28 +1,37 @@
-
 .social-sidebar {
-    position: fixed;
-    top: 50%;
-    right: 20px;
-    transform: translateY(-50%);
-  }
-  
-  .social-links {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .social-links li {
-    margin-bottom: 10px;
-  }
-  
-  .social-links a {
-    text-decoration: none;
-    font-size: 24px;
-    color: #333;
-  }
-  
-  .social-links a:hover {
-    color: #0073e6; /* Change the color on hover */
-  }
-  
+
+  height: 100%;
+  width: 80px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #0a192f;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  padding-top: 20px;
+  margin-top: 6%;
+}
+
+.social-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  padding-top: 70vh;
+  padding-left: 22px;
+  line-height: 40px;
+}
+
+.social-links li {
+  margin-bottom: 10px;
+}
+
+.social-links a {
+  text-decoration: none;
+  font-size: 24px;
+  color: #333;
+}
+
+.social-links a:hover {
+  color: #0073e6;
+}
