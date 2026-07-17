@@ -11,7 +11,7 @@ const fadeUp = (delay: number) => ({
 
 export function Hero() {
   return (
-    <section id="top" className="relative flex flex-col items-center justify-center pt-32 pb-24 text-center overflow-hidden">
+    <section id="top" className="relative flex flex-col items-center justify-center overflow-hidden pt-28 pb-20 text-center sm:pt-32 sm:pb-24">
       {/* Sky-blue radial glow */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-[800px] h-[500px] bg-[radial-gradient(ellipse_at_top,rgba(56,189,248,0.07)_0%,transparent_70%)] pointer-events-none" />
 
@@ -27,14 +27,14 @@ export function Hero() {
 
         <motion.h1
           {...fadeUp(0.2)}
-          className="text-5xl font-bold tracking-tight sm:text-6xl md:text-7xl lg:text-8xl text-white max-w-5xl mb-6 text-balance"
+          className="mb-6 max-w-5xl text-4xl font-bold tracking-tight text-balance text-white sm:text-6xl md:text-7xl lg:text-8xl"
         >
           Building context-aware <br className="hidden sm:block" /> LLM applications
         </motion.h1>
 
         <motion.p
           {...fadeUp(0.3)}
-          className="mt-6 text-lg md:text-xl text-gray-400 max-w-2xl mb-10 text-balance leading-relaxed"
+          className="mt-6 mb-10 max-w-2xl text-base leading-relaxed text-balance text-gray-400 sm:text-lg md:text-xl"
         >
           I build full-stack GenAI products, RAG pipelines, and reliable AI systems that turn messy model output into production-ready solutions.
         </motion.p>

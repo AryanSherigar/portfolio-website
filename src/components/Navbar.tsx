@@ -39,8 +39,8 @@ export function Navbar() {
   return (
     <header className="sticky top-0 z-50 border-b border-white/10 bg-[#02040A]/80 backdrop-blur-md">
       <div className="section-shell flex h-14 items-center justify-between gap-4">
-        <Link href="#top" className="flex items-center gap-2 font-bold text-white tracking-tight">
-          <span className="text-xl">🦜🔗</span> Aryan Sherigar
+        <Link href="#top" className="flex min-w-0 items-center gap-2 font-bold tracking-tight text-white">
+          <span className="flex-none text-xl">🦜🔗</span> <span className="truncate">Aryan Sherigar</span>
         </Link>
 
         <nav className="hidden md:flex items-center gap-6" aria-label="Primary">
@@ -60,7 +60,7 @@ export function Navbar() {
         <button
           aria-expanded={menuOpen}
           aria-label="Open menu"
-          className="md:hidden p-2 text-gray-400 hover:text-white"
+          className="flex-none p-2 text-gray-400 hover:text-white md:hidden"
           onClick={() => setMenuOpen(!menuOpen)}
         >
           ☰
@@ -68,15 +68,17 @@ export function Navbar() {
       </div>
 
       {menuOpen ? (
-        <div className="border-t border-white/10 bg-[#02040A] px-4 py-4 space-y-4 md:hidden">
-           {navItems.map((item) => (
-            <Link key={item.href} href={item.href} className="block text-sm font-medium text-gray-300 hover:text-white" onClick={handleNavigate}>
-              {item.label}
-            </Link>
-          ))}
-          <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="block text-sm font-medium text-gray-300 hover:text-white" onClick={handleNavigate}>
-             Resume
-          </a>
+        <div className="border-t border-white/10 bg-[#02040A] md:hidden">
+          <div className="section-shell space-y-4 py-4">
+            {navItems.map((item) => (
+              <Link key={item.href} href={item.href} className="block text-sm font-medium text-gray-300 hover:text-white" onClick={handleNavigate}>
+                {item.label}
+              </Link>
+            ))}
+            <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="block text-sm font-medium text-gray-300 hover:text-white" onClick={handleNavigate}>
+              Resume
+            </a>
+          </div>
         </div>
       ) : null}
     </header>
