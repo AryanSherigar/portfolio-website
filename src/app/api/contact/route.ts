@@ -3,6 +3,15 @@ import { Resend } from 'resend';
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
+function escapeHtml(value: string) {
+  return value
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
 export async function POST(request: Request) {
   let body: { name?: string; email?: string; message?: string };
 
@@ -12,9 +21,11 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: 'Invalid JSON body.' }, { status: 400 });
   }
 
-  const { name, email, message } = body;
+  const name = body.name?.trim();
+  const email = body.email?.trim();
+  const message = body.message?.trim();
 
-  if (!name?.trim() || !email?.trim() || !message?.trim()) {
+  if (!name || !email || !message) {
     return NextResponse.json({ error: 'All fields are required.' }, { status: 400 });
   }
 
@@ -36,24 +47,27 @@ export async function POST(request: Request) {
 
   try {
     const resend = new Resend(apiKey);
+    const escapedName = escapeHtml(name);
+    const escapedEmail = escapeHtml(email);
+    const escapedMessage = escapeHtml(message);
 
     const { error } = await resend.emails.send({
       from: fromEmail,
       to: toEmail,
-      subject: `Portfolio contact from ${name.trim()}`,
-      replyTo: email.trim(),
+      subject: `Portfolio contact from ${name}`,
+      replyTo: email,
       text: [
-        `Name:    ${name.trim()}`,
-        `Email:   ${email.trim()}`,
+        `Name:    ${name}`,
+        `Email:   ${email}`,
         ``,
         `Message:`,
-        message.trim(),
+        message,
       ].join('\n'),
       html: `
-        <p><strong>Name:</strong> ${name.trim()}</p>
-        <p><strong>Email:</strong> <a href="mailto:${email.trim()}">${email.trim()}</a></p>
+        <p><strong>Name:</strong> ${escapedName}</p>
+        <p><strong>Email:</strong> <a href="mailto:${escapedEmail}">${escapedEmail}</a></p>
         <hr />
-        <p style="white-space:pre-wrap">${message.trim()}</p>
+        <p style="white-space:pre-wrap">${escapedMessage}</p>
       `,
     });
 
