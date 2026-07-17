@@ -61,7 +61,7 @@ export function Contact() {
     <Section id="contact" eyebrow="Contact" title="Let’s make it easy to reach me" description="Use the form for a direct message or reach out through email and social links.">
       <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
         <div className="surface-card rounded-[1.75rem] p-6 sm:p-8">
-          <form className="grid gap-4" onSubmit={handleSubmit}>
+          <form className="grid gap-4" onSubmit={handleSubmit} noValidate>
             <label className="sr-only" htmlFor="contact-name">Your name</label>
             <input id="contact-name" autoComplete="name" className="rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm outline-none focus:border-[#38bdf8]/80 focus:ring-1 focus:ring-[#38bdf8]/30 transition-colors text-white placeholder:text-gray-500" placeholder="Your name" required value={name} onChange={(event) => setName(event.target.value)} />
             <label className="sr-only" htmlFor="contact-email">Your email</label>
