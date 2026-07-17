@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import 'tailwindcss';
+
+@font-face {
+  font-family: 'Aeonik Pro';
+  src: url('/fonts/AeonikPro-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  --font-sans: 'Aeonik Pro', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  
+  --background: 2 4 10;
+  --foreground: 250 250 250;
+  --muted: 153 153 153;
+  --surface: 10 12 16;
+  --surface-elevated: 15 18 24;
+  --border: 35 35 35;
+  /* Sky-blue is now the global accent, matching the projects section */
+  --accent: 56 189 248;
+  --accent-foreground: 2 4 10;
+  --ring: 56 189 248;
+  --highlight: 56 189 248;
+}
+
+* {
+  border-color: rgb(var(--border) / 1);
+}
+
+html {
+  scroll-behavior: smooth;
+  color-scheme: dark;
+}
+
+body {
+  min-height: 100vh;
+  background-color: rgb(var(--background));
+  background-image: 
+    linear-gradient(to right, rgba(255,255,255,0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,0.02) 1px, transparent 1px);
+  background-size: 60px 60px;
+  background-position: center top;
+  color: rgb(var(--foreground));
+  font-family: 'Aeonik Pro', sans-serif;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: rgb(var(--accent) / 0.2);
+}
+
+@layer components {
+  .section-shell {
+    @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .surface-card {
+    background: rgb(var(--surface) / 0.88);
+    backdrop-filter: blur(18px);
+    border: 1px solid rgb(var(--border) / 1);
+    box-shadow: 0 4px 20px rgb(0 0 0 / 0.4);
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .surface-card:hover {
+    border-color: rgba(56, 189, 248, 0.3);
+    box-shadow: 0 0 30px rgba(56, 189, 248, 0.06);
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+}
