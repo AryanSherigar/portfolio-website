@@ -79,8 +79,8 @@ export function Contact() {
           <h3 className="text-lg font-semibold">Direct Links</h3>
           <div className="mt-4 space-y-4 text-sm leading-7 text-[color:rgb(var(--foreground)/0.82)]">
             <p>Email: <a className="text-[#38bdf8] hover:opacity-80 transition-opacity" href={`mailto:${contactLinks.email}`}>{contactLinks.email}</a></p>
-            <p>GitHub: <a className="text-[#38bdf8] hover:opacity-80 transition-opacity" href={contactLinks.github}>{contactLinks.github}</a></p>
-            <p>LinkedIn: <a className="text-[#38bdf8] hover:opacity-80 transition-opacity" href={contactLinks.linkedin}>{contactLinks.linkedin}</a></p>
+            <p>GitHub: <a className="break-all text-[#38bdf8] transition-opacity hover:opacity-80" href={contactLinks.github}>{contactLinks.github}</a></p>
+            <p>LinkedIn: <a className="break-all text-[#38bdf8] transition-opacity hover:opacity-80" href={contactLinks.linkedin}>{contactLinks.linkedin}</a></p>
           </div>
         </aside>
       </div>

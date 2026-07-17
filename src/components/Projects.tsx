@@ -9,11 +9,11 @@ export function Projects() {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <section id="projects" className="py-24 bg-[rgb(var(--background))] text-white">
-      <div className="mx-auto max-w-[1400px] px-6 lg:px-12 flex flex-col lg:flex-row items-start gap-12 lg:gap-20">
+    <section id="projects" className="bg-[rgb(var(--background))] py-20 text-white sm:py-24">
+      <div className="section-shell flex flex-col items-start gap-10 lg:flex-row lg:gap-16">
 
         {/* Left Sidebar (ToC) */}
-        <Reveal className="relative flex-none lg:w-48 lg:sticky lg:top-32 hidden md:block">
+        <Reveal className="relative flex-none hidden lg:sticky lg:top-32 lg:block lg:w-52">
           {/* Vertical Line */}
           <div className="absolute left-0 top-0 bottom-0 w-[1px] bg-white/10" />
 
@@ -42,7 +42,7 @@ export function Projects() {
         </Reveal>
 
         {/* Mobile Sidebar (Horizontal Tabs) */}
-        <div className="md:hidden flex overflow-x-auto gap-4 border-b border-white/10 pb-4 w-full no-scrollbar">
+        <div className="flex w-full gap-4 overflow-x-auto border-b border-white/10 pb-4 lg:hidden">
           {projects.map((project, index) => (
             <button
               key={project.title}
