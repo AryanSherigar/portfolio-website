@@ -32,10 +32,18 @@ export function Navbar() {
   }, [menuOpen]);
 
   const linkClass = (href: string) => {
+    const isActive = activeId === href.slice(1);
+    const isAboutLink = href === '#about';
     const isContactLink = href === '#contact';
-    const activeClass = isContactLink ? 'text-white' : 'text-[#38bdf8]';
+    const textClass = isContactLink && isActive
+      ? 'text-white'
+      : isAboutLink
+        ? 'text-[#38bdf8]'
+        : isActive
+          ? 'text-[#38bdf8]'
+          : 'text-gray-400 hover:text-white';
 
-    return `px-3 py-2 text-sm font-medium transition-colors ${activeId === href.slice(1) ? activeClass : 'text-gray-400 hover:text-white'}`;
+    return `px-3 py-2 text-sm font-medium transition-colors ${textClass}`;
   };
 
   const handleNavigate = () => setMenuOpen(false);
