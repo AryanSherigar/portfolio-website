@@ -31,8 +31,12 @@ export function Navbar() {
     };
   }, [menuOpen]);
 
-  const linkClass = (href: string) =>
-    `px-3 py-2 text-sm font-medium transition-colors ${activeId === href.slice(1) ? 'text-[#38bdf8]' : 'text-gray-400 hover:text-white'}`;
+  const linkClass = (href: string) => {
+    const isContactLink = href === '#contact';
+    const activeClass = isContactLink ? 'text-white' : 'text-[#38bdf8]';
+
+    return `px-3 py-2 text-sm font-medium transition-colors ${activeId === href.slice(1) ? activeClass : 'text-gray-400 hover:text-white'}`;
+  };
 
   const handleNavigate = () => setMenuOpen(false);
 
