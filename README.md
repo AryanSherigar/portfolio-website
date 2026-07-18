@@ -1,6 +1,6 @@
 # Aryan Sherigar Portfolio Website
 
-A recruiter-focused, single-page portfolio built with Next.js, TypeScript, Tailwind CSS, and Framer Motion to showcase Aryan Sherigar’s software engineering and GenAI work.
+This is my recruiter-focused, single-page portfolio built with Next.js, TypeScript, Tailwind CSS, and Framer Motion to showcase my software engineering and GenAI work.
 
 ## Local development setup
 
@@ -19,8 +19,8 @@ Create a `.env.local` file in the repository root (or copy from `.env.example`) 
 | --- | --- | --- |
 | `RESEND_API_KEY` | API key used by the contact email route | Resend dashboard (`https://resend.com`) |
 | `CONTACT_FROM_EMAIL` | Verified sender email/domain for outbound contact emails | Verified sender/domain in Resend |
-| `CONTACT_TO_EMAIL` | Inbox that receives portfolio contact form messages | Your destination email (defaults to `sherigararyan90@gmail.com` if omitted) |
-| `SITE_URL` | Deployed production URL used for metadata/canonical references | Your Vercel deployment URL |
+| `CONTACT_TO_EMAIL` | Inbox that receives portfolio contact form messages | My destination email (defaults to `sherigararyan90@gmail.com` if omitted) |
+| `SITE_URL` | Deployed production URL used for metadata/canonical references | My Vercel deployment URL |
 
 ## How to add or edit projects
 
@@ -37,12 +37,12 @@ Update the `projects` array to add, remove, or edit featured projects.
 
 ## Deploy to Vercel
 
-1. Push your branch to GitHub.
+1. Push my branch to GitHub.
 2. Import the repository in Vercel.
 3. Add all environment variables from the table above in Vercel Project Settings.
 4. Deploy using default Next.js settings.
 
-One-click deploy template (replace with your own repo URL if needed):
+One-click deploy template (replace with my own repo URL if needed):
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/AryanSherigar/portfolio-website)
 
