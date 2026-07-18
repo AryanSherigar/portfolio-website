@@ -45,7 +45,7 @@ body {
   background-position: center top;
   color: rgb(var(--foreground));
   font-family: 'Aeonik Pro', sans-serif;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 ::selection {

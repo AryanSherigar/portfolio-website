@@ -50,9 +50,9 @@ export function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-white/10 bg-[#02040A]/80 backdrop-blur-md">
-      <div className="section-shell flex h-14 items-center justify-between gap-4">
-        <Link href="#top" className="flex min-w-0 items-center gap-2 font-bold tracking-tight text-white">
-          <span className="flex-none text-xl">🦜🔗</span> <span className="truncate">Aryan Sherigar</span>
+      <div className="section-shell flex h-24 items-center justify-between gap-4">
+        <Link href="#top" className="flex min-w-0 items-center gap-2 font-bold tracking-tight text-white text-2xl">
+          <span className="truncate">Aryan Sherigar</span>
         </Link>
 
         <nav className="hidden md:flex items-center gap-6" aria-label="Primary">
