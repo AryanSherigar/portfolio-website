@@ -1,43 +1,64 @@
-# Aryan Sherigar Portfolio
+# Aryan Sherigar Portfolio Website
 
-A single-page Next.js portfolio for Aryan Sherigar, built to help recruiters quickly understand the profile, review featured projects, and contact him.
+A recruiter-focused, single-page portfolio built with Next.js, TypeScript, Tailwind CSS, and Framer Motion to showcase Aryan Sherigar’s software engineering and GenAI work.
 
-## Local Setup
+## Local development setup
 
 ```bash
 npm install
 npm run dev
 ```
 
-## Environment Variables
+Open `http://localhost:3000`.
 
-| Name | Description | Where to get it |
+## Environment variables
+
+Create a `.env.local` file in the repository root (or copy from `.env.example`) and set:
+
+| Variable | Description | Where to get it |
 | --- | --- | --- |
-| `RESEND_API_KEY` | API key used by the contact form email route | Create it in the Resend dashboard |
-| `CONTACT_TO_EMAIL` | Destination inbox for contact messages | Use `sherigararyan90@gmail.com` or another inbox you control |
-| `CONTACT_FROM_EMAIL` | Verified sender address for Resend | Add a verified domain or Resend test sender |
-| `SITE_URL` | Canonical deployed site URL for metadata | Your Vercel deployment URL |
+| `RESEND_API_KEY` | API key used by the contact email route | Resend dashboard (`https://resend.com`) |
+| `CONTACT_FROM_EMAIL` | Verified sender email/domain for outbound contact emails | Verified sender/domain in Resend |
+| `CONTACT_TO_EMAIL` | Inbox that receives portfolio contact form messages | Your destination email (defaults to `sherigararyan90@gmail.com` if omitted) |
+| `SITE_URL` | Deployed production URL used for metadata/canonical references | Your Vercel deployment URL |
 
-## Updating Content
+## How to add or edit projects
 
-- Edit featured projects in `src/lib/site-data.ts`.
-- Update skills, achievements, and contact links in `src/lib/site-data.ts`.
-- Replace the profile photo placeholder in `src/components/Hero.tsx`.
+Project cards and other profile content are managed in:
 
-## Resume
+- `/home/runner/work/portfolio-website/portfolio-website/src/lib/site-data.ts`
 
-- Replace the PDF at `public/resume.pdf` with your final resume.
-- The hero and resume sections already link to `/resume.pdf`.
+Update the `projects` array to add, remove, or edit featured projects.
 
-## Deployment
+## How to swap the resume PDF
 
-- Push the repo to GitHub.
-- Import the repository into Vercel.
-- Add the environment variables above in the Vercel project settings.
-- Deploy using the default Next.js settings.
+1. Replace `/home/runner/work/portfolio-website/portfolio-website/public/resume.pdf` with the new file.
+2. Keep the same filename (`resume.pdf`) so existing hero/resume links continue to work.
 
-## Contact Form
+## Deploy to Vercel
 
-- The contact form posts to `POST /api/contact`.
-- It uses a Next.js route handler and is safe for Vercel deployment.
-- Wire the route to Resend using the env vars above before going live.
+1. Push your branch to GitHub.
+2. Import the repository in Vercel.
+3. Add all environment variables from the table above in Vercel Project Settings.
+4. Deploy using default Next.js settings.
+
+One-click deploy template (replace with your own repo URL if needed):
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/AryanSherigar/portfolio-website)
+
+## How to update contact details
+
+Update contact links and email shown on the site in:
+
+- `/home/runner/work/portfolio-website/portfolio-website/src/lib/site-data.ts` (`contactLinks`)
+
+Contact form delivery behavior is configured in:
+
+- `/home/runner/work/portfolio-website/portfolio-website/src/app/api/contact/route.ts`
+
+After updates, run:
+
+```bash
+npm run lint
+npm run build
+```
