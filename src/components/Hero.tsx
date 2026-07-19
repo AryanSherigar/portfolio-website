@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from 'framer-motion';
+import { contactLinks } from '@/lib/site-data';
 import { Button } from './Button';
 
 const fadeUp = (delay: number) => ({
@@ -43,7 +44,7 @@ export function Hero() {
           <Button href="#projects" variant="primary">
             View Projects
           </Button>
-          <Button href="/resume.pdf" variant="secondary">
+          <Button download href={contactLinks.resume} variant="secondary">
             Download Resume
           </Button>
         </motion.div>
