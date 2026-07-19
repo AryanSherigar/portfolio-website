@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
-import { navItems } from '@/lib/site-data';
+import { contactLinks, navItems } from '@/lib/site-data';
 
 export function Navbar() {
   const [activeId, setActiveId] = useState('about');
@@ -64,7 +64,7 @@ export function Navbar() {
         </nav>
 
         <div className="hidden md:flex items-center gap-4">
-           <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="rounded-full border border-[#38bdf8]/30 bg-[#38bdf8]/10 px-4 py-1.5 text-sm font-medium text-[#38bdf8] hover:border-[#38bdf8]/60 hover:bg-[#38bdf8]/20 transition font-mono">
+           <a href={contactLinks.resume} target="_blank" rel="noopener noreferrer" className="rounded-full border border-[#38bdf8]/30 bg-[#38bdf8]/10 px-4 py-1.5 text-sm font-medium text-[#38bdf8] hover:border-[#38bdf8]/60 hover:bg-[#38bdf8]/20 transition font-mono">
              Resume
            </a>
         </div>
@@ -87,7 +87,7 @@ export function Navbar() {
                 {item.label}
               </Link>
             ))}
-            <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="block text-sm font-medium text-gray-300 hover:text-white" onClick={handleNavigate}>
+            <a href={contactLinks.resume} target="_blank" rel="noopener noreferrer" className="block text-sm font-medium text-gray-300 hover:text-white" onClick={handleNavigate}>
               Resume
             </a>
           </div>

@@ -1,3 +1,4 @@
+import { contactLinks } from '@/lib/site-data';
 import { Button } from './Button';
 import { Section } from './Section';
 
@@ -10,8 +11,8 @@ export function Resume() {
           <p className="mt-2 max-w-2xl text-sm leading-7 text-[color:rgb(var(--foreground)/0.82)]">Use the button below to view or download the PDF version of my resume.</p>
         </div>
         <div className="flex flex-wrap gap-3">
-          <Button href="/resume.pdf">Download Resume</Button>
-          <Button href="/resume.pdf" variant="secondary">
+          <Button download href={contactLinks.resume}>Download Resume</Button>
+          <Button href={contactLinks.resume} target="_blank" variant="secondary">
             View Resume
           </Button>
         </div>
